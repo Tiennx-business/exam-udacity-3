@@ -9,3 +9,4 @@ export AWS_REGION=us-east-1b
 export AWS_PROFILE=default
 export JWT_SECRET=testing
 export URL=http://localhost:8100
+export GITHUB_TOKEN = git@github.com:Tiennx-business/exam-udacity-3.git
