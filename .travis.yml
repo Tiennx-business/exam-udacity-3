@@ -1,17 +1,24 @@
 language: node_js
+node_js:
+  - 12
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  keep_history: true
-  POSTGRES_USERNAME: postgres
-  POSTGRES_PASSWORD: mypassword
-  POSTGRES_DB: postgres
-  POSTGRES_HOST: database-1.c8t3ee6kqwll.us-east-1.rds.amazonaws.com
-  AWS_REGION: us-east-1b
-  AWS_PROFILE: default
-  AWS_BUCKET: arn:aws:s3:::my-681930916209-bucket
-  JWT_SECRET: testing
-  URL: "http://localhost:8100"
-  on:
-    branch: main
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  - docker build -t simple-node .
+  - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
+
+# Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push YOUR_DOCKER_HUB/simple-node
