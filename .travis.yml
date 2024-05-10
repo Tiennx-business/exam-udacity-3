@@ -3,7 +3,15 @@ language: node_js
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
+  POSTGRES_USERNAME: postgres
+  POSTGRES_PASSWORD: mypassword
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: database-1.c8t3ee6kqwll.us-east-1.rds.amazonaws.com
+  AWS_REGION: us-east-1b
+  AWS_PROFILE: default
+  AWS_BUCKET: arn:aws:s3:::my-681930916209-bucket
+  JWT_SECRET: testing
+  URL: "http://localhost:8100"
   on:
     branch: main
