@@ -3,12 +3,12 @@ kind: ConfigMap
 metadata:
   name: env-config
 data:
-  POSTGRES_USERNAME: postgres
-  POSTGRES_PASSWORD: mypassword
+  POSTGRES_USERNAME: cG9zdGdyZXM=
+  POSTGRES_PASSWORD: bXlwYXNzd29yZA==
   POSTGRES_HOST: database-1.c8t3ee6kqwll.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgres
   AWS_BUCKET: arn:aws:s3:::my-681930916209-bucket
-  AWS_REGION: us-east-1b
+  AWS_REGION: us-east-1
   JWT_SECRET: testing
   URL: http://localhost:8100
 
