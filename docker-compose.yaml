@@ -15,7 +15,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: postgres
       POSTGRES_HOST: database-1.c8t3ee6kqwll.us-east-1.rds.amazonaws.com
-      AWS_REGION: us-east-1b
+      AWS_REGION: us-east-1
       AWS_PROFILE: default
       AWS_BUCKET: arn:aws:s3:::my-681930916209-bucket
       JWT_SECRET: testing
@@ -29,7 +29,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: postgres
       POSTGRES_HOST: database-1.c8t3ee6kqwll.us-east-1.rds.amazonaws.com
-      AWS_REGION: us-east-1b
+      AWS_REGION: us-east-1
       AWS_PROFILE: default
       AWS_BUCKET: arn:aws:s3:::my-681930916209-bucket
       JWT_SECRET: testing
