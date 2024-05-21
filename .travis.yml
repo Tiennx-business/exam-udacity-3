@@ -15,10 +15,10 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-api-feed .
-  - docker tag udagram-api-feed tiennx7/udagram-api-feed:latest
+  - docker build -t exam-udacity-3 .
+  - docker tag exam-udacity-3 tiennx-business/exam-udacity-3:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push tiennx7/udagram-api-feed
+  - docker push tiennx7/exam-udacity-3
